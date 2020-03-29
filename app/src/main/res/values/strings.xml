@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">OpenGLES</string>
+    <string-array name="pages">
+        <item>java实现</item>
+        <item>JNI实现</item>
+        <item>01三角形</item>
+        <item>02获取统一变量</item>
+        <item>03获取统一变量块</item>
+    </string-array>
+</resources>
