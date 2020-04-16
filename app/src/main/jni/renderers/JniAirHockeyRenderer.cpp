@@ -51,8 +51,8 @@ void JniAirHockeyRenderer::onSurfaceCreated() {
 //第四个参数指定了 用法 , 是静态的画布上面
     // LOGI("user info----name:size:%d", sizeof(vertiecs));
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertiecs), vertiecs, GL_STATIC_DRAW);
-    char *vertexGLSLName = "simple_vertex_shader.glsl";
-    char *fragmentGLSLName = "simple_fragment_shader.glsl";
+    const char *vertexGLSLName = "simple_vertex_shader.glsl";
+    const char *fragmentGLSLName = "simple_fragment_shader.glsl";
     ShaderInfo shaders[] =
             {
                     {GL_VERTEX_SHADER,   vertexGLSLName},

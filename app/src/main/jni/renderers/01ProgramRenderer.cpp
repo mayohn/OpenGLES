@@ -24,8 +24,8 @@ void Program01Renderer::onDrawFrame() {
 
     // Clear the color buffer
     glClear(GL_COLOR_BUFFER_BIT);
-    char *vertexGLSLName = "01triangles_vertex_shader.glsl";
-    char *fragmentGLSLName = "01triangles_fragment_shader.glsl";
+    const char *vertexGLSLName = "01triangles_vertex_shader.glsl";
+    const char *fragmentGLSLName = "01triangles_fragment_shader.glsl";
     ShaderInfo shaders[] =
             {
                     {GL_VERTEX_SHADER,  vertexGLSLName},

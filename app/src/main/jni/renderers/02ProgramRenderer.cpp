@@ -3,8 +3,8 @@
 
 
 void Program02Renderer::onSurfaceCreated() {
-    char *vertexGLSLName = "02program_vertex_shader.glsl";
-    char *fragmentGLSLName = "02program_fragment_shader.glsl";
+    const  char *vertexGLSLName = "02program_vertex_shader.glsl";
+    const  char *fragmentGLSLName = "02program_fragment_shader.glsl";
     ShaderInfo shaders[] =
             {
                     {GL_VERTEX_SHADER,   vertexGLSLName},
