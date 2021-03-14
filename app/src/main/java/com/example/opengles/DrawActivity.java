@@ -1,6 +1,7 @@
 package com.example.opengles;
 
 import android.app.Activity;
+import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.widget.LinearLayout;
@@ -26,6 +27,7 @@ public class DrawActivity extends Activity {
         layout = findViewById(R.id.layout);
         glSurfaceView = new GLSurfaceView(this);
         glSurfaceView.setEGLContextClientVersion(3);
+        setTranslucent(glSurfaceView);
         int i = getIntent().getIntExtra("Type", 0);
         switch (i) {
             case 0:
@@ -35,18 +37,25 @@ public class DrawActivity extends Activity {
                 renderer = new JniAirHockeyRenderer(DrawActivity.this);
                 break;
             case 2:
-                renderer=new Program01Renderer(DrawActivity.this);
+                renderer = new Program01Renderer(DrawActivity.this);
                 break;
             case 3:
-                renderer=new Program02Renderer(DrawActivity.this);
+                renderer = new Program02Renderer(DrawActivity.this);
                 break;
             case 4:
-                renderer=new Program03Renderer(DrawActivity.this);
+                renderer = new Program03Renderer(DrawActivity.this);
                 break;
         }
         glSurfaceView.setRenderer(renderer);
         rendererSet = true;
         layout.removeAllViews();
+//        Display display = getWindowManager().getDefaultDisplay();
+//        int width = display.getWidth();
+//        int height = display.getHeight();
+//        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int) 768, (int) 480);
+//        layoutParams.width = width / 2;
+//        layoutParams.height = height / 2;
+//        glSurfaceView.setLayoutParams(layoutParams);
         layout.addView(glSurfaceView);
     }
 
@@ -64,5 +73,16 @@ public class DrawActivity extends Activity {
         if (rendererSet) {
             glSurfaceView.onPause();
         }
+    }
+
+    /**
+     * 设置透明背景的方法
+     * 这个方法需要在setRenderer之前调用才有效
+     */
+    private void setTranslucent(GLSurfaceView glSurfaceView) {
+        glSurfaceView.setEGLConfigChooser(8, 8, 8, 8, 16, 0);
+        glSurfaceView.getHolder().setFormat(PixelFormat.TRANSLUCENT);
+        // 将GLSurfaceView置顶
+        glSurfaceView.setZOrderOnTop(true);
     }
 }

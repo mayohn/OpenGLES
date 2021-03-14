@@ -21,7 +21,6 @@ void Program01Renderer::onDrawFrame() {
     };
 
 
-
     // Clear the color buffer
     glClear(GL_COLOR_BUFFER_BIT);
     const char *vertexGLSLName = "01triangles_vertex_shader.glsl";
@@ -35,7 +34,7 @@ void Program01Renderer::onDrawFrame() {
     GLuint program = LoadShaders(shaders);
     // Use the program object
     glUseProgram(program);
-    glClearColor ( 1.0f, 1.0f, 1.0f, 0.0f );
+    glClearColor ( 0.0f, 0.0f, 0.0f, 0.0f );
     // Load the vertex data
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vVertices);
     glEnableVertexAttribArray(0);
