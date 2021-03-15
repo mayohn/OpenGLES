@@ -15,9 +15,8 @@ void Program03Renderer::onSurfaceCreated() {
                     {GL_FRAGMENT_SHADER, fragmentGLSLName},
                     {GL_NONE, NULL}
             };
-    GLint program=LoadShaders(shaders);
+    GLint program = LoadShaders(shaders);
     glUseProgram(program);
-
 }
 
 void Program03Renderer::onSurfaceChanged(jint width, jint height) {
@@ -25,4 +24,7 @@ void Program03Renderer::onSurfaceChanged(jint width, jint height) {
 }
 
 void Program03Renderer::onDrawFrame() {
+    GLint maxVertexAttribs;
+    glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &maxVertexAttribs);
+    LOGI("支持最大顶点数量%d",maxVertexAttribs);
 }

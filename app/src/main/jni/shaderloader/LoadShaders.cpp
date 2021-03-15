@@ -51,7 +51,9 @@ GLuint LoadShaders(ShaderInfo *shaders) {
         GLint compiled;
         glGetShaderiv(shader, GL_COMPILE_STATUS, &compiled);
         if (!compiled) {
-            LOGI("shader compliied failed");
+            GLchar log[1000];
+            glGetShaderInfoLog(shader, 1000, NULL, log);
+            LOGI("shader compliied failed%s",log);
             return 0;
         } else {
             LOGI("shader compliied success");
