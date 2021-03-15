@@ -59,6 +59,14 @@ public:
 
     void onDrawFrame();
 };
+class VertexArrayRenderer : public Renderder {
+public:
+    void onSurfaceCreated();
+
+    void onSurfaceChanged(jint width, jint height);
+
+    void onDrawFrame();
+};
 #ifdef __cplusplus
 }
 #endif

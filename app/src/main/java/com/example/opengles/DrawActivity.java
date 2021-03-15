@@ -13,6 +13,7 @@ import com.example.opengles.renderers.JniAirHockeyRenderer;
 import com.example.opengles.renderers.Program01Renderer;
 import com.example.opengles.renderers.Program02Renderer;
 import com.example.opengles.renderers.Program03Renderer;
+import com.example.opengles.renderers.VertexArrayRenderer;
 
 public class DrawActivity extends Activity {
     private LinearLayout layout;
@@ -44,6 +45,9 @@ public class DrawActivity extends Activity {
                 break;
             case 4:
                 renderer = new Program03Renderer(DrawActivity.this);
+                break;
+            case 5:
+                renderer = new VertexArrayRenderer(DrawActivity.this);
                 break;
         }
         glSurfaceView.setRenderer(renderer);

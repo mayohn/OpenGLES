@@ -27,6 +27,7 @@ static const GLchar *ReaderShader(const char *fileName) {
 }
 
 GLuint LoadShaders(ShaderInfo *shaders) {
+    LOGI("load glsl....");
     if (shaders == NULL)return 0;
     GLuint program = glCreateProgram();
     ShaderInfo *entry = shaders;

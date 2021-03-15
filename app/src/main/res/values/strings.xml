@@ -6,5 +6,6 @@
         <item>01三角形</item>
         <item>02获取统一变量</item>
         <item>03获取统一变量块</item>
+        <item>顶点数组绘制三角形</item>
     </string-array>
 </resources>
